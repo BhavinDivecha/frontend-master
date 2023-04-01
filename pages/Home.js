@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import allActions from '../store/actions';
+// import allActions from '../store/actions';
 
 const Home = () => {
     const [homeData, setHomeData] = useState([]);
@@ -10,7 +10,7 @@ const Home = () => {
         const res = await fetch("https://reqres.in/api/users/");
         const json = await res.json();
         setHomeData(json.data);
-        dispatch(allActions.homeActions.getHomeData(json.data))
+        // dispatch(allActions.homeActions.getHomeData(json.data))
     };
 
     useEffect(()=>{
