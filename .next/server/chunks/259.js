@@ -3,56 +3,6 @@ exports.id = 259;
 exports.ids = [259];
 exports.modules = {
 
-/***/ 2116:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* unused harmony export default */
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const path = [
-    {
-        uid: 21,
-        name: " Home",
-        id: 1,
-        path: "/"
-    },
-    {
-        uid: 31,
-        name: "Blog",
-        id: 2,
-        path: "Blog"
-    },
-    {
-        uid: 41,
-        name: "About",
-        id: 3,
-        path: "About"
-    }
-];
-function Header() {
-    return /*#__PURE__*/ _jsx("header", {
-        children: /*#__PURE__*/ _jsx("nav", {
-            children: /*#__PURE__*/ _jsx("ul", {
-                children: path.map((value)=>{
-                    return /*#__PURE__*/ _jsx("li", {
-                        children: /*#__PURE__*/ _jsx(Link, {
-                            href: value.path,
-                            children: value.name
-                        })
-                    }, value.uid);
-                })
-            })
-        })
-    });
-}
-
-
-/***/ }),
-
 /***/ 9129:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -125,6 +75,56 @@ function Footer() {
 
 /***/ }),
 
+/***/ 4912:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* unused harmony export default */
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const path = [
+    {
+        uid: 21,
+        name: " Home",
+        id: 1,
+        path: "/"
+    },
+    {
+        uid: 31,
+        name: "Blog",
+        id: 2,
+        path: "Blog"
+    },
+    {
+        uid: 41,
+        name: "About",
+        id: 3,
+        path: "About"
+    }
+];
+function Header() {
+    return /*#__PURE__*/ _jsx("header", {
+        children: /*#__PURE__*/ _jsx("nav", {
+            children: /*#__PURE__*/ _jsx("ul", {
+                children: path.map((value)=>{
+                    return /*#__PURE__*/ _jsx("li", {
+                        children: /*#__PURE__*/ _jsx(Link, {
+                            href: value.path,
+                            children: value.name
+                        })
+                    }, value.uid);
+                })
+            })
+        })
+    });
+}
+
+
+/***/ }),
+
 /***/ 5259:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -135,7 +135,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9129);
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2116);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4912);
 /* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(424);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_navbar__WEBPACK_IMPORTED_MODULE_3__]);
 _navbar__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];

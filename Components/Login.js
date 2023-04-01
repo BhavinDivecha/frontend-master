@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { Formik, Field, FieldArray, ErrorMessage } from 'formik';
-import { Login } from '../api/index';
+import { Login } from '../api';
 import * as Yup from "yup";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
