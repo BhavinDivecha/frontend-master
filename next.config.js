@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    protocol: 'http://',
-    baseUrl: 'localhost:3001/',
+    protocol: 'https://',
+    baseUrl: 'backend-master.vercel.app/',
     language: 'English',
   },
 }
