@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     protocol: 'https://',
-    baseUrl: 'backend-master.vercel.app/',
+    baseUrl: 'backend-master-production-28e2.up.railway.app/',
     language: 'English',
   },
 }
