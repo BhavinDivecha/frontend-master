@@ -12,7 +12,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main style={{minHeight:"600px"}}>{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );

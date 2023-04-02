@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 
 export default function Courses() {
     const router = useRouter()
+    const [isLoggedIn,setIsLoggedIn] = useState(false);
 
     const [course,setCourse] = useState([]);
 
@@ -30,6 +31,15 @@ export default function Courses() {
         {
             fetchData(router.query.id)
         }
+
+        if(localStorage.getItem('token') != undefined)
+        {
+            setIsLoggedIn(true);
+        }
+        else
+        {
+            setIsLoggedIn(false);
+        }
         
     },[router.query])
     return (
@@ -37,7 +47,7 @@ export default function Courses() {
             
             <div className="container">
                 <div className="row pt-12">
-                    <div className="col-lg-12 mb-12 mb-lg-12">
+                    <div className="col-lg-8 mb-8 mb-lg-8">
                         
 
                         <div className="mb-8">
@@ -230,6 +240,167 @@ export default function Courses() {
 
                                             
                                         </div>
+                                    </div>
+                                </div>
+                                {
+                                    isLoggedIn ? (
+                                        <div className="border rounded shadow mb-6 overflow-hidden">
+                                            <div className="d-flex align-items-center" id="curriculumheadingOne">
+                                                <h5 className="mb-0 w-100">
+                                                    <button className="d-flex align-items-center p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#EducaorDetails" aria-expanded="false" aria-controls="EducaorDetails">
+                                                        <span className="me-4 text-dark d-flex">
+                                                            
+                                                            <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <rect width="15" height="2" fill="currentColor"/>
+                                                            </svg>
+
+                                                            <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                                                <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                                            </svg>
+
+                                                        </span>
+
+                                                        Educator Details
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="EducaorDetails" className="collapse" aria-labelledby="curriculumheadingOne" data-parent="#accordionCurriculum">
+                                                <div className="border-top px-5 py-4 min-height-70 d-md-flex align-items-center">
+                                                    <div className="d-flex align-items-center me-auto mb-4 mb-md-0">
+                                                
+
+                                                        <div className="ms-4">
+                                                        <span dangerouslySetInnerHTML={{__html: course.educator_details}}/>
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    )
+                                    :(null)
+                                }
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 mb-4 mb-lg-4">
+                        <div id="accordionCurriculum">
+
+                                    
+                            <div className="border rounded shadow mb-6 overflow-hidden">
+                                <div className="d-flex align-items-center" id="curriculumheadingOne">
+                                    <h5 className="mb-0 w-100">
+                                        <button className="d-flex align-items-center p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#Links" aria-expanded="true" aria-controls="Links">
+                                            <span className="me-4 text-dark d-flex">
+                                                
+                                                <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="15" height="2" fill="currentColor"/>
+                                                </svg>
+
+                                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                                    <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                                </svg>
+
+                                            </span>
+
+                                            Links
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="Links" className="collapse show" aria-labelledby="curriculumheadingOne" data-parent="#accordionCurriculum">
+                                    
+                                    <div className="border-top px-5 py-4 min-height-70 d-md-flex align-items-center">
+                                        
+                                        <div className="d-flex align-items-center me-auto mb-4 mb-md-0">
+                                    
+                                            
+                                            <div className="ms-4">
+                                            <span dangerouslySetInnerHTML={{__html: course.links}}/>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="border rounded shadow mb-6 overflow-hidden">
+                                <div className="d-flex align-items-center" id="curriculumheadingOne">
+                                    <h5 className="mb-0 w-100">
+                                        <button className="d-flex align-items-center p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#Document" aria-expanded="false" aria-controls="Document">
+                                            <span className="me-4 text-dark d-flex">
+                                                
+                                                <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="15" height="2" fill="currentColor"/>
+                                                </svg>
+
+                                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                                    <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                                </svg>
+
+                                            </span>
+
+                                            Document
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="Document" className="collapse" aria-labelledby="curriculumheadingOne" data-parent="#accordionCurriculum">
+                                    <div className="border-top px-5 py-4 min-height-70 d-md-flex align-items-center">
+                                        <div className="d-flex align-items-center me-auto mb-4 mb-md-0">
+                                    
+
+                                            <div className="ms-4">
+                                            <span dangerouslySetInnerHTML={{__html: course.documents}}/>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="border rounded shadow mb-6 overflow-hidden">
+                                <div className="d-flex align-items-center" id="curriculumheadingOne">
+                                    <h5 className="mb-0 w-100">
+                                        <button className="d-flex align-items-center p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#Videos" aria-expanded="false" aria-controls="Videos">
+                                            <span className="me-4 text-dark d-flex">
+                                                
+                                                <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="15" height="2" fill="currentColor"/>
+                                                </svg>
+
+                                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                                    <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                                </svg>
+
+                                            </span>
+
+                                            Videos
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="Videos" className="collapse" aria-labelledby="curriculumheadingOne" data-parent="#accordionCurriculum">
+                                    <div className="border-top px-5 py-4 min-height-70 d-md-flex align-items-center">
+                                        <div className="d-flex align-items-center me-auto mb-4 mb-md-0">
+                                    
+
+                                            <div className="ms-4">
+                                            <span dangerouslySetInnerHTML={{__html: course.videos}}/>
+                                            </div>
+                                        </div>
+
+                                        
                                     </div>
                                 </div>
                             </div>

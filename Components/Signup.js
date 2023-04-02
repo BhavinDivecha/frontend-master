@@ -1,20 +1,24 @@
 import Container from 'react-bootstrap/Container';
 import { useRouter } from 'next/router';
-import { login } from '../api';
+import { register } from '../api';
 import React, { useEffect, useState } from 'react';
 
-function AuthLogin() {
+function AuthSignup() {
 
+    const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const [type,setType] = useState("");
     const router = useRouter();
 
-    const handleLogin = async() => {
+    const handleSignup = async() => {
         const values = {
+          name,
           email,
-          password
+          password,
+          type,
         };
-        await login(values).then(function (res) {
+        await register(values).then(function (res) {
           if (res && res.status == 200) {
             if(res.data.token != undefined){
                 localStorage.setItem("token",res.data.token);
@@ -25,7 +29,7 @@ function AuthLogin() {
             
           } else {
             console.log(res);
-            setLoginError(res.data.error);
+            setSignupError(res.data.error);
             
           }
         })
@@ -38,10 +42,20 @@ function AuthLogin() {
             <div className="container mb-11">
             <div className="row gx-0">
                 <div className="col-md-7 col-xl-4 mx-auto">
-                {/* Login */}
-                <h3 className="mb-6">Log In  </h3>
-                {/* Form Login */}
+                {/* Signup */}
+                <h3 className="mb-6">Sign Up </h3>
+                {/* Form Signup */}
                 
+                    <div className="form-group mb-5">
+                        <label htmlFor="modalSigninName1">Name</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="modalSigninName1"
+                            onChange={e => setName(e.target.value)} value={name}
+                            required
+                        />
+                    </div>
                     {/* Email */}
                     <div className="form-group mb-5">
                     <label htmlFor="modalSigninEmail1">Username or Email</label>
@@ -63,16 +77,27 @@ function AuthLogin() {
                         onChange={e => setPassword(e.target.value)} value={password}
                     />
                     </div>
+                    <div className="form-group mb-5">
+                        <label htmlFor="modalSigninType1">Type</label>
+                        <select
+                            className="form-control"
+                            id="modalSigninType1"
+                            onChange={e => setType(e.target.value)} value={type}
+                        >
+                            <option value={"Student"}>Student</option>
+                            <option value={"Teacher"}>Teacher</option>
+                        </select>
+                    </div>
                     
-                    <button onClick={handleLogin} className="btn btn-block btn-primary">
-                    LOGIN
+                    <button onClick={handleSignup} className="btn btn-block btn-primary">
+                    Signup
                     </button>
                     
                 
                 <p className="mb-0 font-size-sm text-center">
-                    Don't have an account?{" "}
-                    <a className="text-underline" href="/auth/signup">
-                    Sign up
+                    Already have an account?{" "}
+                    <a className="text-underline" href="/auth/login">
+                    Sign In
                     </a>
                 </p>
                 </div>
@@ -84,4 +109,4 @@ function AuthLogin() {
     );
 }
 
-export default AuthLogin;
+export default AuthSignup;

@@ -3,6 +3,15 @@
 import axiosInstance from "../services";
 import axiosInstanceMedia from "../services/axiosMedia";
 
+
+export const login = (data) => {
+  return axiosInstance.post(`login`,data);
+};
+
+export const register = (data) => {
+  return axiosInstance.post(`/register`,data);
+};
+
 export const GetDepartmentsPublic = () => {
   return axiosInstance.get(`/public-departments`);
 };

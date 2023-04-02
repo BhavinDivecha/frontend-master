@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    protocol: 'https://',
-    baseUrl: 'backend-master-production-28e2.up.railway.app/',
+    protocol: 'http://',
+    baseUrl: 'localhost:3001/',
     language: 'English',
   },
 }

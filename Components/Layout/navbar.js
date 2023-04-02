@@ -1,8 +1,12 @@
 import { GetDepartmentsPublic } from '../../api';
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
     const [departments,setCourses] = useState([]);
+
+    const [isLoggedIn,setIsLoggedIn] = useState(false);
+    const router = useRouter();
 
     const fetchData = async() => {
         await GetDepartmentsPublic()
@@ -16,9 +20,23 @@ export default function Navbar() {
         })
     }
     useEffect(() => {
-        fetchData() 
+        fetchData();
+        if(localStorage.getItem('token') != undefined)
+        {
+            setIsLoggedIn(true);
+        }
+        else
+        {
+            setIsLoggedIn(false);
+        }
         
     },[])
+
+
+    const handleLogout = () => {
+        localStorage.clear();
+        router.push('/');
+    }
 
     return (
         
@@ -26,7 +44,7 @@ export default function Navbar() {
             <div className="container-fluid">
 
                 <a className="navbar-brand me-0" href="/">
-                    <img src="./assets/img/brand.svg" className="navbar-brand-img" alt="..."/>
+                    <img src="/assets/img/logo.png" className="navbar-brand-img" alt="..."/>
                 </a>
 
             
@@ -47,6 +65,7 @@ export default function Navbar() {
                                 Home
                             </a>
                         </li>
+                        
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" id="navbarCourses" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
                                 Courses
@@ -65,7 +84,31 @@ export default function Navbar() {
                                 
                             </ul>
                         </li>
-
+                        {
+                            isLoggedIn ? (
+                                <li className="nav-item dropdown dropdown-full-width">
+                                    <a className="nav-link" onClick={handleLogout} style={{cursor:"pointer"}}>
+                                        Logout
+                                    </a>
+                                </li>
+                            ) :
+                            (
+                                <>
+                                    <li className="nav-item dropdown dropdown-full-width">
+                                        <a className="nav-link" href='/auth/login'>
+                                            Login
+                                        </a>
+                                    </li>
+                                    <li className="nav-item dropdown dropdown-full-width">
+                                        <a className="nav-link" href='/auth/signup'>
+                                            Register
+                                        </a>
+                                    </li>
+                                </>
+                            )
+                        }
+                        
+                        
                         
                     </ul>
                 </div>
