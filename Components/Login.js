@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import { useRouter } from 'next/router';
 import { login } from '../api';
 import React, { useEffect, useState } from 'react';
+import { toast } from "react-toastify";
 
 function AuthLogin() {
 
@@ -18,14 +19,15 @@ function AuthLogin() {
           if (res && res.status == 200) {
             if(res.data.token != undefined){
                 localStorage.setItem("token",res.data.token);
+                localStorage.setItem("type",res.data.type);
             }
             router.push({
               pathname: '/'
             });
             
           } else {
-            console.log(res);
-            setLoginError(res.data.error);
+            
+            toast.error(res.data.error);
             
           }
         })

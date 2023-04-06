@@ -28,3 +28,10 @@ export const GetCourseById = (id) => {
   return axiosInstance.get(`/public-course/${id}`);
 };
 
+export const GetLanguagesPublic = () => {
+  return axiosInstance.get(`/public-languages`);
+};
+
+export const GetSetting = () => {
+  return axiosInstance.get(`setting`);
+};

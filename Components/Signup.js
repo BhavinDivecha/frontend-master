@@ -22,13 +22,14 @@ function AuthSignup() {
           if (res && res.status == 200) {
             if(res.data.token != undefined){
                 localStorage.setItem("token",res.data.token);
+                localStorage.setItem("type",res.data.type);
             }
             router.push({
               pathname: '/'
             });
             
           } else {
-            console.log(res);
+            
             setSignupError(res.data.error);
             
           }

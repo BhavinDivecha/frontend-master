@@ -43,8 +43,8 @@ export default function Dashboard() {
                     </div>
 
                     <div className="row row-cols-2 row-cols-lg-3 row-cols-xl-4">
-                        {console.log("departments")}
-                        {console.log(departments.length)}
+                        
+                        
                         {
                             departments && departments.length > 0 ? 
                             (

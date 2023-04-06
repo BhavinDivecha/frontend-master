@@ -19,7 +19,7 @@ export default function Courses() {
         .then(function(res) {
             if(res && res.status == 200) {
                 setDepartment(res.data.details);
-                console.log(res.data.details);
+                
             } else {
                 
             }
@@ -28,7 +28,7 @@ export default function Courses() {
         .then(function(res) {
             if(res && res.status == 200) {
                 setCourses(res.data.details);
-                console.log(res.data.details);
+                
             } else {
                 
             }
@@ -45,10 +45,10 @@ export default function Courses() {
     function handleChange(e)
     {
         let array = categories;
-        console.log("categories",categories)
+        
         if(e.target.checked)
         {
-            console.log("array",array);
+            
             array.push(e.target.name);
         }
         else{
@@ -59,7 +59,7 @@ export default function Courses() {
         
         array = [...new Set(array)];
         setCategory(array);
-        console.log(categories);
+        
     }
 
     const handleOnClick = async() => {

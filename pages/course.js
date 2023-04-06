@@ -9,16 +9,16 @@ export default function Courses() {
     const router = useRouter()
     const [isLoggedIn,setIsLoggedIn] = useState(false);
 
+    const [userType,setUserType] = useState("");
+
     const [course,setCourse] = useState([]);
 
     const fetchData = async(course) => {
-
-        
         await GetCourseById(course)
         .then(function(res) {
             if(res && res.status == 200) {
                 setCourse(res.data.details);
-                console.log(res.data.details);
+                
             } else {
                 
             }
@@ -34,6 +34,7 @@ export default function Courses() {
 
         if(localStorage.getItem('token') != undefined)
         {
+            setUserType(localStorage.getItem('type'));
             setIsLoggedIn(true);
         }
         else
@@ -243,7 +244,7 @@ export default function Courses() {
                                     </div>
                                 </div>
                                 {
-                                    isLoggedIn ? (
+                                    isLoggedIn && userType == "Teacher" ? (
                                         <div className="border rounded shadow mb-6 overflow-hidden">
                                             <div className="d-flex align-items-center" id="curriculumheadingOne">
                                                 <h5 className="mb-0 w-100">

@@ -10,8 +10,7 @@ axiosInstance.interceptors.request.use(async (config) => {
     Accept: "application/json",
     "Access-Control-Allow-Origin": "*",
   };
-  
-  config.headers['language'] = `${process.env.language}`;
+  config.headers['language'] = `${localStorage.getItem('language') == undefined ? 'English' : localStorage.getItem('language')}`;
 
   return config;
 });
