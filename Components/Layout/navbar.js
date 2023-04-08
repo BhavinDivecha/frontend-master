@@ -1,12 +1,14 @@
 import { GetDepartmentsPublic, GetLanguagesPublic, GetSetting } from '../../api';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import language from '../../language.json'
 
 export default function Navbar() {
     const [departments,setCourses] = useState([]);
     const [languages,setlanguages] = useState([]);
     const [setting,setSettings] = useState([]);
     const [colour,setColor] = useState(undefined);
+    const [translation,setTranslation] = useState([]);
     
 
     const [isLoggedIn,setIsLoggedIn] = useState(false);
@@ -51,10 +53,18 @@ export default function Navbar() {
         if(localStorage.getItem('token') != undefined)
         {
             setIsLoggedIn(true);
+            
         }
         else
         {
             setIsLoggedIn(false);
+        }
+
+        if(localStorage.getItem('language') == undefined)
+        {
+            setTranslation(language.Default);
+        }else{
+            setTranslation(language[localStorage.getItem('language')]);
         }
         
     },[])
@@ -107,13 +117,13 @@ export default function Navbar() {
                     <ul className="navbar-nav navbar-vertical ms-xl-4 d-none d-xl-flex">
                         <li className="nav-item dropdown dropdown-full-width">
                             <a className="nav-link" href="/">
-                                Home
+                                {translation.home}
                             </a>
                         </li>
                         
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" id="navbarCourses" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-                                Courses
+                                {translation.courses}
                             </a>
                             <ul className="dropdown-menu border-xl shadow-none" aria-labelledby="navbarShop">
                                 {
@@ -138,7 +148,7 @@ export default function Navbar() {
 
                     <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" id="navbarLanguages" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-                                Language
+                                {translation.language}
                             </a>
                             <ul className="dropdown-menu border-xl shadow-none" aria-labelledby="navbarShop">
                                 {
@@ -158,7 +168,7 @@ export default function Navbar() {
                                 isLoggedIn ? (
                                     <li className="nav-item dropdown dropdown-full-width">
                                         <a className="nav-link" onClick={handleLogout} style={{cursor:"pointer"}}>
-                                            Logout
+                                            {translation.logout}
                                         </a>
                                     </li>
                                 ) :

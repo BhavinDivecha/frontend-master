@@ -3,7 +3,7 @@ import Layout from '../Components/Layout'
 import { GetCoursesPublic, GetDepartmentById } from '../api';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-
+import language from '../language.json';
 
 export default function Courses() {
     const router = useRouter()
@@ -11,6 +11,7 @@ export default function Courses() {
     const [courses,setCourses] = useState([]);
     const [department,setDepartment] = useState([]);
     const [categories,setCategory] = useState([]);
+    const [translation,setTranslation] = useState([]);
 
     const fetchData = async(dept = null, catg = []) => {
 
@@ -40,6 +41,16 @@ export default function Courses() {
         fetchData(router.query.id)
         
     },[router.query])
+
+    useEffect(() => {
+        
+        if(localStorage.getItem('language') == undefined)
+        {
+            setTranslation(language.Default);
+        }else{
+            setTranslation(language[localStorage.getItem('language')]);
+        }
+    },[])
 
 
     function handleChange(e)
@@ -96,7 +107,7 @@ export default function Courses() {
                                             <div id="coursefilter1">
                                                 <h4 className="mb-0">
                                                     <button className="p-6 text-dark fw-medium d-flex align-items-center collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#coursefiltercollapse1" aria-expanded="true" aria-controls="coursefiltercollapse1">
-                                                        Category
+                                                        {translation.category}
                                                         <span className="ms-auto text-dark d-flex">
                                                             
                                                             <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -153,7 +164,7 @@ export default function Courses() {
                                         
                                         <div className="col-md-8 card-footer px-2 px-md-5 py-4 py-md-0 position-relative">
                                             
-                                            <a href={`course/?id=${course._id}`}><span className="mb-1 d-inline-block text-gray-800">{course.name}</span></a>
+                                            <a href={`course/?id=${course._id}`}><span className="mb-1 d-inline-block text-gray-800">{course.name} ({course.category})</span></a>
                     
                                             
                                             <div className="position-relative">

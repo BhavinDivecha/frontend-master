@@ -3,6 +3,7 @@ import Layout from '../Components/Layout'
 import { GetCoursesPublic, GetCourseById } from '../api';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import language from '../language.json';
 
 
 export default function Courses() {
@@ -12,6 +13,7 @@ export default function Courses() {
     const [userType,setUserType] = useState("");
 
     const [course,setCourse] = useState([]);
+    const [translation,setTranslation] = useState([]);
 
     const fetchData = async(course) => {
         await GetCourseById(course)
@@ -42,7 +44,19 @@ export default function Courses() {
             setIsLoggedIn(false);
         }
         
-    },[router.query])
+    },[router.query]);
+
+
+    useEffect(() => {
+        
+        if(localStorage.getItem('language') == undefined)
+        {
+            setTranslation(language.Default);
+        }else{
+            setTranslation(language[localStorage.getItem('language')]);
+        }
+    },[])
+
     return (
         <Layout>
             
@@ -74,7 +88,7 @@ export default function Courses() {
 
                                                 </span>
 
-                                                Introduction
+                                                {translation.introduction}
                                             </button>
                                         </h5>
                                     </div>
@@ -113,7 +127,7 @@ export default function Courses() {
 
                                                 </span>
 
-                                                Task
+                                                {translation.task}
                                             </button>
                                         </h5>
                                     </div>
@@ -150,7 +164,7 @@ export default function Courses() {
 
                                                 </span>
 
-                                                Process
+                                                {translation.process}
                                             </button>
                                         </h5>
                                     </div>
@@ -187,7 +201,7 @@ export default function Courses() {
 
                                                 </span>
 
-                                                Learning Objectives
+                                                {translation.learningObjectives}
                                             </button>
                                         </h5>
                                     </div>
@@ -224,7 +238,7 @@ export default function Courses() {
 
                                                 </span>
 
-                                                Conclusion
+                                                {translation.conclusion}
                                             </button>
                                         </h5>
                                     </div>
@@ -262,7 +276,7 @@ export default function Courses() {
 
                                                         </span>
 
-                                                        Educator Details
+                                                        {translation.educatorDetails}
                                                     </button>
                                                 </h5>
                                             </div>
@@ -310,7 +324,7 @@ export default function Courses() {
 
                                             </span>
 
-                                            Links
+                                            {translation.links}
                                         </button>
                                     </h5>
                                 </div>
@@ -322,7 +336,7 @@ export default function Courses() {
                                         <div className="d-flex align-items-center me-auto mb-4 mb-md-0">
                                     
                                             
-                                            <div className="ms-4">
+                                            <div className="ms-4" style={{inlineSize: "30%",overflowWrap: "break-word"}}>
                                             <span dangerouslySetInnerHTML={{__html: course.links}}/>
                                             </div>
                                         </div>
@@ -349,7 +363,7 @@ export default function Courses() {
 
                                             </span>
 
-                                            Document
+                                            {translation.document}
                                         </button>
                                     </h5>
                                 </div>
@@ -386,7 +400,7 @@ export default function Courses() {
 
                                             </span>
 
-                                            Videos
+                                            {translation.video}
                                         </button>
                                     </h5>
                                 </div>

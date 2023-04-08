@@ -35,7 +35,10 @@ function AuthSignup() {
           }
         })
       } 
-
+    
+    const onOptionChange = e => {
+        setType(e.target.value)
+    }
     return (
         
         <Container style={{marginTop:"20px"}}>
@@ -79,15 +82,28 @@ function AuthSignup() {
                     />
                     </div>
                     <div className="form-group mb-5">
-                        <label htmlFor="modalSigninType1">Type</label>
-                        <select
-                            className="form-control"
-                            id="modalSigninType1"
-                            onChange={e => setType(e.target.value)} value={type}
-                        >
-                            <option value={"Student"}>Student</option>
-                            <option value={"Teacher"}>Teacher</option>
-                        </select>
+                        <label htmlFor="modalSigninType1">Type</label><br></br>
+                        
+                        <input
+                            type="radio"
+                            name="type"
+                            value="Student"
+                            id="Student"
+                            checked={type === "Student"}
+                            onChange={onOptionChange}
+                            
+                        />
+                        <label htmlFor="Student" style={{marginRight:"30%"}}>Student</label>
+
+                        <input
+                            type="radio"
+                            name="type"
+                            value="Teacher"
+                            id="Teacher"
+                            checked={type === "Teacher"}
+                            onChange={onOptionChange}
+                        />
+                        <label htmlFor="Teacher">Teacher</label>
                     </div>
                     
                     <button onClick={handleSignup} className="btn btn-block btn-primary">

@@ -2,12 +2,12 @@
 import Layout from '../Components/Layout'
 import { GetDepartmentsPublic } from '../api';
 import React, { useEffect, useState } from 'react';
-
+import language from '../language.json';
 
 export default function Dashboard() {
 
     const [departments,setDepartments] = useState([]);
-
+    const [translation,setTranslation] = useState([]);
     const fetchCourse = async(page = 1) => {
         await GetDepartmentsPublic(page)
         .then(function(res) {
@@ -19,8 +19,14 @@ export default function Dashboard() {
         })
     }
     useEffect(() => {
-        fetchCourse()
+        fetchCourse();
         
+        if(localStorage.getItem('language') == undefined)
+        {
+            setTranslation(language.Default);
+        }else{
+            setTranslation(language[localStorage.getItem('language')]);
+        }
     },[])
     return (
         <Layout>
@@ -30,7 +36,7 @@ export default function Dashboard() {
                         
                         <div className="col-md-auto">
                             <a href="/courses" className="d-flex align-items-center fw-medium">
-                                Browse All
+                                {translation.browseAll}
                                 <div className="ms-2 d-flex">
                                     
                                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
