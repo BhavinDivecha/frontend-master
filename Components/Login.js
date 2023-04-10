@@ -13,7 +13,8 @@ function AuthLogin() {
     const handleLogin = async() => {
         const values = {
           email,
-          password
+          password,
+          portal:"Website"
         };
         await login(values).then(function (res) {
           if (res && res.status == 200) {

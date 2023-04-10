@@ -21,11 +21,12 @@ export default function Dashboard() {
     useEffect(() => {
         fetchCourse();
         
+        const languageJson = JSON.parse(localStorage.getItem('languageJson'));
         if(localStorage.getItem('language') == undefined)
         {
-            setTranslation(language.Default);
+            setTranslation(languageJson.Default);
         }else{
-            setTranslation(language[localStorage.getItem('language')]);
+            setTranslation(languageJson[localStorage.getItem('language')]);
         }
     },[])
     return (

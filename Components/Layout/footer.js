@@ -8,11 +8,15 @@ export default function Footer() {
 
     useEffect(() => {
     
+        const languageJson = JSON.parse(localStorage.getItem('languageJson'));
         if(localStorage.getItem('language') == undefined)
         {
-            setTranslation(language.Default);
+            console.log(languageJson);
+            if(languageJson != undefined && languageJson != null){
+                setTranslation(languageJson.Default);
+            }
         }else{
-            setTranslation(language[localStorage.getItem('language')]);
+            setTranslation(languageJson[localStorage.getItem('language')]);
         }
         
     },[]);

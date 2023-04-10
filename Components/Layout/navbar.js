@@ -1,7 +1,6 @@
 import { GetDepartmentsPublic, GetLanguagesPublic, GetSetting } from '../../api';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import language from '../../language.json'
 
 export default function Navbar() {
     const [departments,setCourses] = useState([]);
@@ -18,7 +17,10 @@ export default function Navbar() {
 
         await GetSetting()
         .then(function(res) {
+            
             if(res && res.status == 200) {
+                
+                localStorage.setItem('languageJson',JSON.stringify(res.data.settings.languages));
                 setSettings(res.data.settings);
                 setColor(res.data.settings.color);
             } else {
@@ -58,13 +60,18 @@ export default function Navbar() {
         else
         {
             setIsLoggedIn(false);
+            
         }
 
+        const languageJson = JSON.parse(localStorage.getItem('languageJson'));
         if(localStorage.getItem('language') == undefined)
         {
-            setTranslation(language.Default);
+            console.log(languageJson);
+            if(languageJson != undefined && languageJson != null){
+                setTranslation(languageJson.Default);
+            }
         }else{
-            setTranslation(language[localStorage.getItem('language')]);
+            setTranslation(languageJson[localStorage.getItem('language')]);
         }
         
     },[])
@@ -163,6 +170,28 @@ export default function Navbar() {
                                 
                                 
                             </ul>
+                        </li>
+                        <li className="nav-item dropdown dropdown-full-width" style={{padding:"0 !important"}}>
+                            <div style={{'display':"flex"}}>
+                            {
+                                languages && languages.length > 0 && languages.map((lang) => (
+                                    
+                                        <a className="nav-link language-nav" onClick={() => handleLanguageChange(lang.name)} title={lang.name}> 
+                                        {
+                                            lang.logo != "" && lang.logo != null && lang.logo != undefined ?
+                                            (
+                                                <img src={`${process.env.protocol}${process.env.baseUrl}uploads/${lang.logo}`} style={{height:"30px",width:"40px",cursor:"pointer"}}/>
+                                            )
+                                            :
+                                            (
+                                                <span style={{cursor:"pointer"}}>{lang.name}</span>
+                                            )
+                                        }
+                                            
+                                        </a>
+                                ))
+                            }
+                            </div>
                         </li>
                         {
                                 isLoggedIn ? (
