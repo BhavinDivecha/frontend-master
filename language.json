@@ -35,6 +35,24 @@
       "document":"Document",
       "video":"Video"
     },
+    "French": {
+      "home": "Maison",
+      "courses": "cours",
+      "language": "Langue",
+      "logout": "Se déconnecter",
+      "footerText":"Copyright © 2023 Cair 4 YOUTH. Tous droits réservés.",
+      "browseAll":"Parcourir tout",
+      "category":"catégorie",
+      "introduction":"Introduction",
+      "task":"Tâche",
+      "process":"Processus",
+      "learningObjectives":"Objectifs d'apprentissage",
+      "conclusion":"Conclusion",
+      "educaorDetails":"Détails sur l'éducation",
+      "links":"Liens",
+      "document":"Document",
+      "video":"Vidéo"
+    },
     "Hindi": {
         "home":"Hindi Home",
         "courses":"Hindi courses",
