@@ -31,14 +31,7 @@ a {
 }
 
 
-.navbar-vertical .dropdown-menu a {
-  color:black !important;
-}
 
-.navbar-vertical .dropdown-item:focus, .navbar-vertical .dropdown-item:hover{
-  background-color: grey !important;
-  border-left-color: grey !important;
-}
 
 .language-nav {
   cursor:"pointer";

@@ -22,11 +22,14 @@ export default function Dashboard() {
         fetchCourse();
         
         const languageJson = JSON.parse(localStorage.getItem('languageJson'));
-        if(localStorage.getItem('language') == undefined)
+        if(localStorage.getItem('languageJson') != undefined)
         {
-            setTranslation(languageJson.Default);
-        }else{
-            setTranslation(languageJson[localStorage.getItem('language')]);
+            if(localStorage.getItem('language') == undefined)
+            {
+                setTranslation(languageJson.Default);
+            }else{
+                setTranslation(languageJson[localStorage.getItem('language')]);
+            }
         }
     },[])
     return (
