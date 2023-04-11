@@ -185,37 +185,6 @@ export default function Navbar() {
                                             
                                         </li>
                                     </ul>
-
-                                    <ul className="navbar-nav navbar-vertical ms-xl-4 d-none d-xl-flex">
-                                        {/* <li className="nav-item dropdown dropdown-full-width">
-                                            <a className="nav-link" href="/">
-                                                {translation.home}
-                                            </a>
-                                        </li> */}
-                                        
-                                        <li className="nav-item dropdown">
-                                            <a className="nav-link dropdown-toggle" id="navbarCourses" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-                                                {translation.courses}
-                                            </a>
-                                            <ul className="dropdown-menu border-xl shadow-none" aria-labelledby="navbarShop">
-                                                {
-                                                    departments && departments.length > 0 && departments.map((dept) => (
-                                                        <li className="dropdown-item">
-                                                            <a className="dropdown-link" href={`/courses/?id=${dept._id}`}>
-                                                                {dept.name}
-                                                            </a>
-                                                        </li>
-                                                    ))
-                                                }
-                                                
-                                                
-                                            </ul>
-                                        </li>
-                                        
-                                        
-                                        
-                                        
-                                    </ul>
                                     <ul className='navbar-nav ms-auto'> 
 
                                     
