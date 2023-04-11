@@ -160,7 +160,7 @@ export default function Navbar() {
                                                     <rect y={16} width={20} height={1} fill="currentColor" />
                                                 </svg>
                                                 </div>
-                                                <span className="text-white fw-medium me-1">Courses</span>
+                                                <span className="text-white fw-medium me-1">{translation.courses}</span>
                                             </div>
                                             </a>
                                             <ul
