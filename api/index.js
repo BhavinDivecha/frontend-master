@@ -35,3 +35,13 @@ export const GetLanguagesPublic = () => {
 export const GetSetting = () => {
   return axiosInstance.get(`setting`);
 };
+
+
+
+export const updateProfile = (data) => {
+  return axiosInstance.post(`/profile`,data);
+};
+
+export const getProfile = () => {
+  return axiosInstance.get(`/profile`);
+};

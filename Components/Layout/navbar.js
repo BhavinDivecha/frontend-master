@@ -73,7 +73,7 @@ export default function Navbar() {
         {
             console.log(languageJson);
             if(languageJson != undefined && languageJson != null){
-                setTranslation(languageJson.Default);
+                setTranslation(languageJson.English);
             }
         }else{
             setTranslation(languageJson[localStorage.getItem('language')]);
@@ -185,6 +185,23 @@ export default function Navbar() {
                                             
                                         </li>
                                     </ul>
+
+                                    <ul className="navbar-nav navbar-vertical ms-xl-4 d-none d-xl-flex">
+                                        {
+                                            localStorage.getItem('type') == "Teacher" ? (
+                                        
+                                                <li className="nav-item dropdown dropdown-full-width">
+                                                    <a className="nav-link" href={`${process.env.adminUrl}/course-teacher?token=${localStorage.getItem('token')}`} target="_blank">
+                                                        {translation.addCourse}
+                                                    </a>
+                                                </li>
+                                            ):
+                                            (null)
+                                        }
+                                        
+                                        
+                                        
+                                    </ul>
                                     <ul className='navbar-nav ms-auto'> 
 
                                     
@@ -197,7 +214,7 @@ export default function Navbar() {
                                                         {
                                                             lang.logo != "" && lang.logo != null && lang.logo != undefined ?
                                                             (
-                                                                <img src={`${process.env.protocol}${process.env.baseUrl}uploads/${lang.logo}`} style={ lang.name == localStorage.getItem('language') ? {height:"30px",width:"40px",cursor:"pointer",boxShadow:"0 1px 5px black"} : {height:"30px",width:"40px",cursor:"pointer"}}/>
+                                                                <img src={`${process.env.protocol}${process.env.baseUrl}uploads/${lang.logo}`} style={ lang.name == localStorage.getItem('language') ? {height:"20px",width:"30px",cursor:"pointer",boxShadow:"0 1px 5px black"} : {height:"20px",width:"30px",cursor:"pointer"}}/>
                                                             )
                                                             :
                                                             (
@@ -212,11 +229,19 @@ export default function Navbar() {
                                         </li>
                                         {
                                                 isLoggedIn ? (
-                                                    <li className="nav-item dropdown dropdown-full-width">
-                                                        <a className="nav-link" onClick={handleLogout} style={{cursor:"pointer"}}>
-                                                            {translation.logout}
-                                                        </a>
-                                                    </li>
+                                                    <>
+                                                        <li className="nav-item dropdown dropdown-full-width">
+                                                            <a className="nav-link" onClick={handleLogout} style={{cursor:"pointer"}}>
+                                                                {translation.logout}
+                                                            </a>
+                                                        </li>
+
+                                                        <li className="nav-item dropdown dropdown-full-width">
+                                                            <a className="nav-link" href="/profile" style={{cursor:"pointer"}}>
+                                                                My Profile
+                                                            </a>
+                                                        </li>
+                                                    </>
                                                 ) :
                                                 (
                                                     <>
@@ -286,19 +311,7 @@ export default function Navbar() {
                 ) :
                 (
                     <>
-                        <div style={{width: "100px",height: "100px",position: "absolute",top:"0",bottom: "0",left: "0",right: "0",margin: "auto",zIndex:"10"}}>
-                            
-                                <Button variant="primary" disabled>
-                                    <Spinner
-                                    as="span"
-                                    animation="grow"
-                                    size="sm"
-                                    role="status"
-                                    aria-hidden="true"
-                                    />
-                                    Loading...
-                                </Button>
-                        </div>
+                        
                         </>
                 )
             }

@@ -13,7 +13,7 @@ export default function Footer() {
         {
             console.log(languageJson);
             if(languageJson != undefined && languageJson != null){
-                setTranslation(languageJson.Default);
+                setTranslation(languageJson.English);
             }
         }else{
             setTranslation(languageJson[localStorage.getItem('language')]);

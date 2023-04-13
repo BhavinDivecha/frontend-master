@@ -52,7 +52,7 @@ export default function Courses() {
         const languageJson = JSON.parse(localStorage.getItem('languageJson'));
         if(localStorage.getItem('language') == undefined)
         {
-            setTranslation(languageJson.Default);
+            setTranslation(languageJson.English);
         }else{
             setTranslation(languageJson[localStorage.getItem('language')]);
         }
@@ -337,7 +337,7 @@ export default function Courses() {
                                         <div className="d-flex align-items-center me-auto mb-4 mb-md-0">
                                     
                                             
-                                            <div className="ms-4" style={{inlineSize: "30%",overflowWrap: "break-word"}}>
+                                            <div className="ms-4" style={{inlineSize: "300px",overflowWrap: "break-word"}}>
                                             <span dangerouslySetInnerHTML={{__html: course.links}}/>
                                             </div>
                                         </div>

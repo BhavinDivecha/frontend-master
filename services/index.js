@@ -12,6 +12,10 @@ axiosInstance.interceptors.request.use(async (config) => {
   };
   config.headers['language'] = `${localStorage.getItem('language') == undefined ? 'English' : localStorage.getItem('language')}`;
 
+  const token = localStorage.getItem('token');
+  if(token){
+    config.headers['Authorization'] = `Bearer ${token}`;
+  }
   return config;
 });
 
