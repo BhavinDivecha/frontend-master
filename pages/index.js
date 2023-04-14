@@ -88,7 +88,7 @@ export default function Dashboard() {
                                                         <a href={`/courses/?id=${dept._id}`} className="card icon-category border shadow-dark p-md-5 p-3 text-center lift"
                                                             style={{
                                                                 height: "225px",
-                                                                backgroundImage: url(`${process.env.protocol}${process.env.baseUrl}uploads/${dept.logo}`),
+                                                                backgroundImage: url(""+`${process.env.protocol}${process.env.baseUrl}uploads/${dept.logo}`+""),
                                                                 backgroundPosition: "center",
                                                                 backgroundRepeat: "no-repeat",
                                                                 backgroundSize: "contain"
