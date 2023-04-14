@@ -82,7 +82,7 @@ export default function Dashboard() {
                                                             ) :
                                                                 (
                                                                     
-                                                                    <img className="rounded shadow-light-lg" src={`${process.env.protocol}${process.env.baseUrl}uploads/${dept.logo}`} alt="..." style={{ width: "116px", height: "82px" }} />
+                                                                    <img className="rounded shadow-light-lg" src={`${process.env.protocol}${process.env.baseUrl}uploads/${dept.logo}`} alt="..." style={{ width: "116px", height: "116px" }} />
                                                                    
                                                                 )
                                                         }
