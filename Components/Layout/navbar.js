@@ -214,7 +214,7 @@ export default function Navbar() {
                                                         {
                                                             lang.logo != "" && lang.logo != null && lang.logo != undefined ?
                                                             (
-                                                                <img src={`${process.env.protocol}${process.env.baseUrl}uploads/${lang.logo}`} style={ lang.name == localStorage.getItem('language') ? {height:"20px",width:"30px",cursor:"pointer",boxShadow:"0 1px 5px black"} : {height:"20px",width:"30px",cursor:"pointer"}}/>
+                                                                <img src={`${process.env.protocol}${process.env.baseUrl}uploads/${lang.logo}`} style={ lang.name == localStorage.getItem('language') ?{height:"15px",width:"20px",cursor:"pointer",boxShadow:"0 1px 5px black"} : {height:"15px",width:"20px",cursor:"pointer"}}/>
                                                             )
                                                             :
                                                             (
