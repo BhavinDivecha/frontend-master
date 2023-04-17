@@ -64,37 +64,34 @@ export default function Dashboard() {
                                         <>
                                         
                                         <div className="col mb-md-6 mb-4 px-2 px-md-4" >
-                                                {
-                                                   dept.logo == undefined ?  (<a href={`/courses/?id=${dept._id}`} className="card icon-category border shadow-dark p-md-5 p-3 text-center lift">
+                                    
+                                            <a href={`/courses/?id=${dept._id}`} className="card icon-category border shadow-dark p-md-5 p-3 text-center lift">
                                                 
-                                                        <div className="position-relative text-light">
+                                                <div className="position-relative text-light">
+                                                    <div className="position-absolute bottom-0 right-0 left-0 icon-h-p">
+                                                        <i className="fas fa-bezier-curve"></i>
+                                                    </div>
                                                     
-                                                                    <div>
-                                                                        <div className="position-absolute bottom-0 right-0 left-0 icon-h-p">
-                                                                            <i className="fas fa-bezier-curve"></i>
-                                                                        </div>
-                                                                        <svg width="116" height="82" viewBox="0 0 116 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path d="M11.9238 65.8391C11.9238 65.8391 20.4749 72.4177 35.0465 70.036C49.6182 67.6542 75.9897 78.4406 75.9897 78.4406C75.9897 78.4406 90.002 85.8843 104.047 79.2427C118.093 72.6012 115.872 58.8253 115.872 58.8253C115.743 56.8104 115.606 46.9466 97.5579 22.0066C91.0438 13.0024 84.1597 6.97958 75.9458 3.74641C58.8245 -2.99096 37.7881 -0.447684 22.9067 9.81852C15.5647 14.8832 7.65514 22.0695 3.0465 31.5007C-7.27017 52.6135 11.9238 65.8391 11.9238 65.8391Z" fill="currentColor" />
-                                                                        </svg>
-                                                                    </div>
-                                                        </div>
+                                                    {
+                                                        dept.logo == undefined ? (
+                                                            <svg width="116" height="82" viewBox="0 0 116 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M11.9238 65.8391C11.9238 65.8391 20.4749 72.4177 35.0465 70.036C49.6182 67.6542 75.9897 78.4406 75.9897 78.4406C75.9897 78.4406 90.002 85.8843 104.047 79.2427C118.093 72.6012 115.872 58.8253 115.872 58.8253C115.743 56.8104 115.606 46.9466 97.5579 22.0066C91.0438 13.0024 84.1597 6.97958 75.9458 3.74641C58.8245 -2.99096 37.7881 -0.447684 22.9067 9.81852C15.5647 14.8832 7.65514 22.0695 3.0465 31.5007C-7.27017 52.6135 11.9238 65.8391 11.9238 65.8391Z" fill="currentColor"/>
+                                                            </svg>
+                                                        ):
+                                                        (
+                                                            <img className="rounded shadow-light-lg" src={`${process.env.protocol}${process.env.baseUrl}uploads/${dept.logo}`} alt="..."  style={{width:"116px",height:"82px"}}/>
+                                                        )
+                                                    }
+                                                    
+                                                    
+
+                                                </div>
 
                                                 
-                                                        <div className="card-footer px-0 pb-0 pt-6">
-                                                            <h5 className="mb-0 line-clamp-1">{dept.name}</h5>
-                                                        </div>
-                                                    </a>
-                                                ):(
-                                                        <a href={`/courses/?id=${dept._id}`} className="card icon-category border shadow-dark p-md-5 p-3 text-center lift"
-                                                        style={{
-                                                            height: "225px",
-                                                            backgroundImage: `url(${process.env.protocol + process.env.baseUrl +'uploads/'+dept.logo})`,
-                                                            backgroundPosition: "center",
-                                                            backgroundRepeat: "no-repeat",
-                                                            backgroundSize:"contain"
-                                                    }}/>
-                                                    )
-                                                }
+                                                <div className="card-footer px-0 pb-0 pt-6">
+                                                    <h5 className="mb-0 line-clamp-1">{dept.name}</h5>
+                                                </div>
+                                            </a>
                                         </div>
                                         </>
                                     ))
