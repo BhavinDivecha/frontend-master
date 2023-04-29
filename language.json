@@ -15,7 +15,8 @@
         "educatorDetails":"Educaor Details",
         "links":"Links",
         "document":"Document",
-        "video":"Video"
+        "video":"Video",
+        "addCourse":"Add Course"
     },
     "English": {
       "home": "Home",
@@ -33,7 +34,8 @@
       "educatorDetails":"Educaor Details",
       "links":"Links",
       "document":"Document",
-      "video":"Video"
+      "video":"Video",
+      "addCourse":"Add Course"
     },
     "French": {
       "home": "Maison",
@@ -51,7 +53,8 @@
       "educatorDetails":"Détails sur l'éducation",
       "links":"Liens",
       "document":"Document",
-      "video":"Vidéo"
+      "video":"Vidéo",
+      "addCourse":"Ajouter un cours"
     },
     "Hindi": {
         "home":"Hindi Home",
@@ -69,6 +72,7 @@
         "educatorDetails":"Hindi Educaor Details",
         "links":"Hindi Links",
         "document":"Hindi Document",
-        "video":"Hindi Video"
+        "video":"Hindi Video",
+        "addCourse":"Add Course"
     }
 }
