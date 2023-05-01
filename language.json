@@ -1,7 +1,7 @@
 {
     "Default": {
         "home": "Home",
-        "courses": "Courses",
+        "courses": "courses",
         "language": "Language",
         "logout": "Logout",
         "footerText":"Copyright © 2023 Cair 4 YOUTH. All Right Reserved.",
@@ -12,15 +12,14 @@
         "process":"Process",
         "learningObjectives":"Learning Objectives",
         "conclusion":"Conclusion",
-        "educatorDetails":"Educaor Details",
+        "educaorDetails":"Educaor Details",
         "links":"Links",
         "document":"Document",
-        "video":"Video",
-        "addCourse":"Add Course"
+        "video":"Video"
     },
     "English": {
       "home": "Home",
-      "courses": "Courses",
+      "courses": "courses",
       "language": "Language",
       "logout": "Logout",
       "footerText":"Copyright © 2023 Cair 4 YOUTH. All Right Reserved.",
@@ -31,30 +30,10 @@
       "process":"Process",
       "learningObjectives":"Learning Objectives",
       "conclusion":"Conclusion",
-      "educatorDetails":"Educaor Details",
+      "educaorDetails":"Educaor Details",
       "links":"Links",
       "document":"Document",
-      "video":"Video",
-      "addCourse":"Add Course"
-    },
-    "French": {
-      "home": "Maison",
-      "courses": "Cours",
-      "language": "Langue",
-      "logout": "Se déconnecter",
-      "footerText":"Copyright © 2023 Cair 4 YOUTH. Tous droits réservés.",
-      "browseAll":"Parcourir tout",
-      "category":"Catégorie",
-      "introduction":"Introduction",
-      "task":"Tâche",
-      "process":"Processus",
-      "learningObjectives":"Objectifs d'apprentissage",
-      "conclusion":"Conclusion",
-      "educatorDetails":"Détails sur l'éducation",
-      "links":"Liens",
-      "document":"Document",
-      "video":"Vidéo",
-      "addCourse":"Ajouter un cours"
+      "video":"Video"
     },
     "Hindi": {
         "home":"Hindi Home",
@@ -69,10 +48,9 @@
         "process":"Hindi Process",
         "learningObjectives":"Hindi Learning Objectives",
         "conclusion":"Hindi Conclusion",
-        "educatorDetails":"Hindi Educaor Details",
+        "educaorDetails":"Hindi Educaor Details",
         "links":"Hindi Links",
         "document":"Hindi Document",
-        "video":"Hindi Video",
-        "addCourse":"Add Course"
+        "video":"Hindi Video"
     }
 }

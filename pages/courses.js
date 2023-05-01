@@ -168,7 +168,7 @@ export default function Courses() {
                                                 <div className="col-md-4 card-zoom position-relative">
                                                     
                                                     <a href={`course/?id=${course._id}`} className="card-img sk-thumbnail img-ratio-2 d-block">
-                                                        <img className="rounded shadow-light-lg" src={`${process.env.protocol}${process.env.baseUrl}uploads/${course.logo}`} alt="..." />
+                                                        <img className="rounded shadow-light-lg" src={`${course.logo}`} alt="..." />
                                                     </a>
                         
                                                 </div>

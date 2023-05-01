@@ -12,6 +12,14 @@ export const register = (data) => {
   return axiosInstance.post(`/register`,data);
 };
 
+export const recoverPassword = (data) => {
+  return axiosInstance.post(`/recover-password`,data);
+};
+
+export const updatePassword = (data) => {
+  return axiosInstance.post(`/update-password`,data);
+};
+
 export const GetDepartmentsPublic = () => {
   return axiosInstance.get(`/public-departments`);
 };

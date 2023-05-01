@@ -34,7 +34,7 @@ function AuthSignup() {
             
           }
         })
-      } 
+    } 
     
     const onOptionChange = e => {
         setType(e.target.value)
