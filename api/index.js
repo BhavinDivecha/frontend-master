@@ -53,3 +53,11 @@ export const updateProfile = (data) => {
 export const getProfile = () => {
   return axiosInstance.get(`/profile`);
 };
+
+export const GetPagesPublic = () => {
+  return axiosInstance.get(`/public-pages`);
+};
+
+export const GetPageById = (id) => {
+  return axiosInstance.get(`/public-page/${id}`);
+};

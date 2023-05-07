@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 import { toast } from "react-toastify";
 
-export default function Layout({ children }) {
+export default function LayoutPages({ children }) {
   // styles the main html tag
   const styles = {
     display: "flex",

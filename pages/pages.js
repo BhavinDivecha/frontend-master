@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { GetPageById } from '../api';
 import React, { useEffect, useState } from 'react';
 import ToastMessageDisplay from '../Components/Toast/toastMessageDisplay';
-import LayoutPages from '../Components/LayoutPages'
+import Layout from '../Components/Layout'
 
 
 function AuthLogin() {
@@ -12,6 +12,15 @@ function AuthLogin() {
     const [content,setContent] = useState([]);
     const router = useRouter();
 
+    useEffect(() => {
+        if(router.query.token != undefined)
+        {
+            setEmail(Buffer.from(router.query.token, 'base64').toString('ascii'))
+        }
+        
+
+        
+    },[router.query]);
 
 
     const fetchData = async() => {
@@ -29,7 +38,7 @@ function AuthLogin() {
     },[router.query.page]);
 
     return (
-        <LayoutPages>
+        <Layout>
             <div className="container">
                 <div className="row pt-12">
                     <div className="col-lg-12 mb-12 mb-lg-12">
@@ -84,7 +93,7 @@ function AuthLogin() {
                     </div>
                 </div>
             </div>
-        </LayoutPages>
+        </Layout>
     );
 }
 
