@@ -1,6 +1,6 @@
 
-import Layout from '../Components/Layout'
-import { GetDepartmentsPublic } from '../api';
+import Layout from '../../Components/Layout'
+import { GetDepartmentsPublic } from '../../api';
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
@@ -48,7 +48,7 @@ export default function Dashboard() {
                     <div className="row align-items-end mb-md-7 mb-4">
                         
                         <div className="col-md-auto">
-                            <a href="/courses" className="d-flex align-items-center fw-medium">
+                            <a href="/training/courses" className="d-flex align-items-center fw-medium">
                                 {translation.browseAll}
                                 <div className="ms-2 d-flex">
                                     
@@ -74,7 +74,7 @@ export default function Dashboard() {
                                         
                                         <div className="col mb-md-6 mb-4 px-2 px-md-4" >
                                     
-                                            <a href={`/courses/?id=${dept._id}`} className="card icon-category border shadow-dark p-md-5 p-3 text-center lift">
+                                            <a href={`/training/courses/?id=${dept._id}`} className="card icon-category border shadow-dark p-md-5 p-3 text-center lift">
                                                 
                                                 <div className="position-relative text-light">
                                                     <div className="position-absolute bottom-0 right-0 left-0 icon-h-p">

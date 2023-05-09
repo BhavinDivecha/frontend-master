@@ -1,9 +1,9 @@
 
-import Layout from '../Components/Layout'
-import { GetCoursesPublic, GetDepartmentById } from '../api';
+import Layout from '../../Components/Layout'
+import { GetCoursesPublic, GetDepartmentById } from '../../api';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import language from '../language.json';
+import language from '../../language.json';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 
@@ -167,7 +167,7 @@ export default function Courses() {
                                         
                                                 <div className="col-md-4 card-zoom position-relative">
                                                     
-                                                    <a href={`course/?id=${course._id}`} className="card-img sk-thumbnail img-ratio-2 d-block">
+                                                    <a href={`/training/course/?id=${course._id}`} className="card-img sk-thumbnail img-ratio-2 d-block">
                                                         <img className="rounded shadow-light-lg" src={`${course.logo}`} alt="..." />
                                                     </a>
                         
@@ -176,11 +176,11 @@ export default function Courses() {
                                                 
                                                 <div className="col-md-8 card-footer px-2 px-md-5 py-4 py-md-0 position-relative">
                                                     
-                                                    <a href={`course/?id=${course._id}`}><span className="mb-1 d-inline-block text-gray-800">{course.name} ({course.category})</span></a>
+                                                    <a href={`/training/course/?id=${course._id}`}><span className="mb-1 d-inline-block text-gray-800">{course.name} ({course.category})</span></a>
                             
                                                     
                                                     <div className="position-relative">
-                                                        <a href={`course/?id=${course._id}`} className="d-block stretched-link"><h4 className="line-clamp-2 me-md-6 me-lg-10 me-xl-4 mb-3"><span dangerouslySetInnerHTML={{__html: course.shortDescription}}/></h4></a>
+                                                        <a href={`/training/course/?id=${course._id}`} className="d-block stretched-link"><h4 className="line-clamp-2 me-md-6 me-lg-10 me-xl-4 mb-3"><span dangerouslySetInnerHTML={{__html: course.shortDescription}}/></h4></a>
                                                         
                                                     </div>
                                                 </div>

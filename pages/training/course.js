@@ -1,9 +1,9 @@
 
-import Layout from '../Components/Layout'
-import { GetCoursesPublic, GetCourseById } from '../api';
+import Layout from '../../Components/Layout'
+import { GetCoursesPublic, GetCourseById } from '../../api';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import language from '../language.json';
+import language from '../../language.json';
 
 
 export default function Courses() {

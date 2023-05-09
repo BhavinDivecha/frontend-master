@@ -173,7 +173,7 @@ export default function Navbar() {
                                                     <li className="dropdown-item ">
                                                         <a
                                                         className="dropdown-link"
-                                                        href={`/courses/?id=${dept._id}`}
+                                                        href={`/training/courses/?id=${dept._id}`}
                                                         >
                                                         
                                                         {dept.name}
