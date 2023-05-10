@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST={"_app.js -> bootstrap/dist/js/bootstrap":{id:3734,files:["static/chunks/734.06339ae95088a7b4.js"]}};
