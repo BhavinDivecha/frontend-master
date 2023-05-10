@@ -5,8 +5,20 @@ import React, { useEffect, useState } from 'react';
 import ToastMessageDisplay from '../Components/Toast/toastMessageDisplay';
 import LayoutPages from '../Components/LayoutPages'
 
+import 'grapesjs/dist/css/grapes.min.css'
+export { getStaticProps } from 'destack/build/server'
+import { ContentProviderGrapes } from 'destack'
 
-function AuthLogin() {
+// const Index = (props) => {
+//   return (
+//     <div style={{ height: '100%' }}>
+//       <ContentProviderGrapes {...props} />
+//     </div>
+//   )
+// }
+// export default Index
+
+function AuthLogin(props) {
 
     
     const [content,setContent] = useState([]);
@@ -27,18 +39,21 @@ function AuthLogin() {
 
         
     },[router.query.page]);
-
     return (
         <LayoutPages>
-            <div className="container">
-                <div className="row pt-12">
-                    <div className="col-lg-12 mb-12 mb-lg-12">
+              {(content.length<1) ?(
+                <div style={{ height: '100%' }}>
+                    <ContentProviderGrapes {...props} />
+                </div>):(
+                <div className="container">
+                    <div className="row pt-12">
+                        <div className="col-lg-12 mb-12 mb-lg-12">
                         
-
-                        <div className="mb-8">
-                            <h3 className="mb-5">{content && content.name}</h3>
-                            <div className="ms-4">
-                                <span dangerouslySetInnerHTML={{__html: content.content}}/>
+                     
+                            <div className="mb-8">
+                                <h3 className="mb-5">{content && content.name}</h3>
+                                <div className="ms-4">
+                                    <span dangerouslySetInnerHTML={{ __html: content.content }} />
                                 </div>
                             </div>
                             {/* <div id="accordionCurriculum">
@@ -81,9 +96,10 @@ function AuthLogin() {
                                 </div>
                             </div>
                         </div> */}
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div>)}
+            
         </LayoutPages>
     );
 }
