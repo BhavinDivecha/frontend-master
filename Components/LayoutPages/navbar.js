@@ -96,7 +96,7 @@ export default function Navbar() {
                                     pages && pages.length > 0 ? (
                                         pages.map((c) => (
                                             <li className="nav-item dropdown dropdown-full-width">
-                                                <a className="nav-link" href={`/?page=${c.slug}`}>
+                                                <a className="nav-link" href={`/${c.slug}`}>
                                                     {c.name}
                                                 </a>
                                             </li>
