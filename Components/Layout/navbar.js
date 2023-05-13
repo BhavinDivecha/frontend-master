@@ -104,7 +104,7 @@ export default function Navbar() {
                     {console.log(colour)}
                     <div className="container-fluid">
 
-                        <a className="navbar-brand me-0" href="/">
+                        <a className="navbar-brand me-4" href="/">
                             {console.log("setting.logo",setting.logo)}
                             {
                                 isLoaded ? (
