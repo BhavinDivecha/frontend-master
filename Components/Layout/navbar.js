@@ -137,8 +137,8 @@ export default function Navbar() {
 
                             </button>
 
-                            <ul className="navbar-nav navbar-vertical ms-xl-4 d-none d-xl-flex">
-                                <li className="nav-item dropdown">
+                            <ul className="navbar-nav">
+                                <li className="nav-item dropdown ">
                                     <a
                                     className="nav-link pb-4 mb-n4 px-0 pt-0"
                                     id="navbarVerticalMenu"
@@ -149,7 +149,6 @@ export default function Navbar() {
                                     >
                                     <div className="bg-primary rounded py-3 px-5 d-flex align-items-center">
                                         <div className="me-3 ms-1 d-flex text-white">
-                                        {/* Icon */}
                                         <svg
                                             width={25}
                                             height={17}

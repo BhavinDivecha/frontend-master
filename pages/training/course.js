@@ -423,6 +423,48 @@ export default function Courses() {
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div className="col-lg-12 mb-12 mb-lg-12">
+                        <div id="accordionCurriculum">
+
+                                    
+                            <div className="border rounded shadow mb-6 overflow-hidden">
+                                <div className="d-flex align-items-center" id="curriculumheadingOne">
+                                    <h5 className="mb-0 w-100">
+                                        <button className="d-flex align-items-center p-5 min-height-80 text-dark fw-medium collapse-accordion-toggle line-height-one" type="button" data-bs-toggle="collapse" data-bs-target="#Quiz" aria-expanded="true" aria-controls="Quiz">
+                                            <span className="me-4 text-dark d-flex">
+                                                
+                                                <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="15" height="2" fill="currentColor"/>
+                                                </svg>
+
+                                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 7H15V9H0V7Z" fill="currentColor"/>
+                                                    <path d="M6 16L6 8.74228e-08L8 0L8 16H6Z" fill="currentColor"/>
+                                                </svg>
+
+                                            </span>
+
+                                            {translation.quiz != undefined ? translation.quiz : "Quiz"}
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="Quiz" className="collapse show" aria-labelledby="curriculumheadingOne" data-parent="#accordionCurriculum">
+                                    
+                                    <div className="">
+                                        
+                                        
+                                            <span dangerouslySetInnerHTML={{__html: course.quiz}}/>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
 
 

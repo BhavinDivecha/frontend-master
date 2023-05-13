@@ -414,8 +414,7 @@ useEffect(() => {
             </div>
           </div>
 
-              {/* <main style={{he}}></main> */}
-              {children}
+          <main>{children}</main>
           <Footer />
         </>
       ) :

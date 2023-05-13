@@ -39,3 +39,7 @@ a {
   padding-right: 5px !important;
 
 }
+
+iframe{
+  width: 100% !important;
+}
