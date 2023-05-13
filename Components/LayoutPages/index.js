@@ -414,7 +414,7 @@ useEffect(() => {
             </div>
           </div>
 
-          <main>{children}</main>
+          <main style={{height:'inherit'}}>{children}</main>
           <Footer />
         </>
       ) :
