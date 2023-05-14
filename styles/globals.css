@@ -43,3 +43,12 @@ a {
 iframe{
   width: 100% !important;
 }
+@media(max-width: 991.98px){
+  .navbar-nav .dropdown>.dropdown-menu{
+    display: "none !important"
+  }
+
+  .navbar-nav .dropdown>.show{
+    display: "block !important"
+  }
+}

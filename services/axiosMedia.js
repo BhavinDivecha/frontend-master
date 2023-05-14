@@ -11,7 +11,7 @@ axiosInstanceMedia.interceptors.request.use(async (config) => {
     "Access-Control-Allow-Origin": "*",
     'Content-Type': 'multipart/form-data'
   };
-
+  config.headers['country'] = `${process.env.country}`;
   const token = localStorage.getItem('token');
   if(token){
     config.headers['Authorization'] = `Bearer ${token}`;

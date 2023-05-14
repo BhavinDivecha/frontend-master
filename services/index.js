@@ -11,7 +11,7 @@ axiosInstance.interceptors.request.use(async (config) => {
     "Access-Control-Allow-Origin": "*",
   };
   config.headers['language'] = `${localStorage.getItem('language') == undefined ? 'English' : localStorage.getItem('language')}`;
-
+  config.headers['country'] = `${process.env.country}`;
   const token = localStorage.getItem('token');
   if(token){
     config.headers['Authorization'] = `Bearer ${token}`;
