@@ -34,7 +34,7 @@ export default function Footer() {
                         <div className="ms-xl-auto d-flex flex-column flex-md-row align-items-stretch align-items-md-center justify-content-center">
                             <ul style={{flex:"none"}} className="navbar-nav flex-row flex-wrap font-size-sm-alone mb-3 mb-md-0 mx-n4 me-md-5 justify-content-center justify-content-lg-start order-1 order-md-0">
                                 <li className="nav-item py-2 py-md-0 px-0 border-top-0">
-                                    <a href="/training" className="nav-link px-4 fw-normal text-gray-800">{translation.home}</a>
+                                    <a href="/" className="nav-link px-4 fw-normal text-gray-800">{translation.home}</a>
                                 </li>
                                 <li className="nav-item py-2 py-md-0 px-0 border-top-0">
                                     <a href="/training/courses" className="nav-link px-4 fw-normal text-gray-800">{translation.courses}</a>
