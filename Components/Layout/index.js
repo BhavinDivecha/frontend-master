@@ -173,7 +173,7 @@ useEffect(() => {
                           type="email"
                           className="form-control"
                           id="modalSigninEmail"
-                          placeholder="creativelayers"
+                          placeholder="Email"
                           onChange={e => setEmail(e.target.value)} value={email}
                           required
                         />
