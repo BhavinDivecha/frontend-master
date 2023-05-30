@@ -188,7 +188,7 @@ export default function Navbar() {
                             </ul>
                             
                             
-                            <ul className="navbar-nav navbar-vertical ms-xl-4 d-none d-xl-flex">
+                            {/* <ul className="navbar-nav navbar-vertical ms-xl-4 d-none d-xl-flex">
                                 {
                                     localStorage.getItem('type') == "Teacher" ? (
                                 
@@ -203,7 +203,7 @@ export default function Navbar() {
                                 
                                 
                                 
-                            </ul>
+                            </ul> */}
                             <ul className='navbar-nav ms-auto'> 
 
                             
