@@ -2,12 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    protocol: 'https://',
-    baseUrl: 'c4y.popaya.co.in:3001/',
-    language: 'English',
-    adminUrl: 'https://admin-cair4youth.vercel.app/',
-    country: 'default'
+    protocol: "https://",
+    baseUrl: "api.bestmicrogardens.eu/",
+    language: "English",
+    adminUrl: "https://admin.bestmicrogardens.eu/",
+    country: "bestmicrogardens",
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
