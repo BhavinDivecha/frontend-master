@@ -110,7 +110,7 @@ export default function Courses() {
                         
                         <div className="container">
                             <div className="row">
-                            {
+                            {/* {
                                 department && department.categories && department.categories.length > 0 && 
                                 <div className="col-xl-4 mb-5 mb-xl-0">
                                     
@@ -158,10 +158,10 @@ export default function Courses() {
                                     </div>
                     
                                 </div>
-                            }
+                            } */}
                     
                                 <div className={
-                                                department && department.categories && department.categories.length > 0 ? "col-xl-8" : "col-xl-12"}>
+                                                department && department.categories && department.categories.length > 0 ? "col-xl-12" : "col-xl-12"}>
                                     
                                     {
                                         courses && courses.length > 0 && courses.map((course) => (
