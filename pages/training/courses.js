@@ -45,7 +45,9 @@ export default function Courses() {
     
 
     useEffect(() => {
-        fetchData(router.query.id)
+        if(router.query.id != undefined){
+            fetchData(router.query.id)
+        }
         
     },[router.query])
 

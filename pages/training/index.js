@@ -98,7 +98,7 @@ export default function Dashboard() {
 
                                                 
                                                 <div className="card-footer px-0 pb-0 pt-6">
-                                                    <h5 className="mb-0 line-clamp-1">{dept.name}</h5>
+                                                    <h5 className="mb-0">{dept.name}</h5>
                                                 </div>
                                             </a>
                                         </div>
