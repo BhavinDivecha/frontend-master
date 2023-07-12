@@ -92,7 +92,7 @@ export default function Dashboard() {
                                   className="rounded shadow-light-lg"
                                   src={`${dept.logo}`}
                                   alt="..."
-                                  style={{ width: "116px", height: "82px" }}
+                                  style={{ width: "210px", height: "210px" }}
                                 />
                               )}
                             </div>
