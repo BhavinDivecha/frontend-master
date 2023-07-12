@@ -36,6 +36,18 @@ export default function Dashboard() {
         <Layout>
           <section className="py-5 py-md-11 bg-white">
             <div className="container">
+              <div className="row align-items-center text-center mb-md-7">
+                <h3
+                  style={{
+                    fontSize: "2.25rem",
+                    lineHeight: "2.5rem",
+                    color: "#238495",
+                  }}
+                >
+                  Modules
+                </h3>
+              </div>
+
               <div className="row align-items-end mb-md-7 mb-4">
                 <div className="col-md-auto">
                   <a
