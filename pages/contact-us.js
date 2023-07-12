@@ -1,39 +1,38 @@
-import Container from 'react-bootstrap/Container';
-import { useRouter } from 'next/router';
-import { GetPageById } from '../api';
-import React, { useEffect, useState } from 'react';
-import ToastMessageDisplay from '../Components/Toast/toastMessageDisplay';
-import LayoutPages from '../Components/LayoutPages'
-
+import Container from "react-bootstrap/Container";
+import { useRouter } from "next/router";
+import { GetPageById } from "../api";
+import React, { useEffect, useState } from "react";
+import ToastMessageDisplay from "../Components/Toast/toastMessageDisplay";
+import LayoutPages from "../Components/LayoutPages";
 
 function AuthLogin(props) {
+  const [content, setContent] = useState([]);
+  const router = useRouter();
 
-    
-    const [content,setContent] = useState([]);
-    const router = useRouter();
+  const fetchData = async () => {
+    await GetPageById(router.query.page).then(function (res) {
+      if (res && res.status == 200) {
+        console.log(res);
+        setContent(res.data.details);
+      }
+    });
+  };
+  useEffect(() => {
+    fetchData(router.query.page);
+  }, [router.query.page]);
 
-
-
-    const fetchData = async() => {
-        await GetPageById(router.query.page).then(function (res) {
-            if (res && res.status == 200) {
-                console.log(res);
-                setContent(res.data.details);
-            } 
-        })
-    }
-    useEffect(() => {
-        fetchData(router.query.page);
-
-        
-    },[router.query.page]);
-
-    return (
-        <LayoutPages>
-            <div style={{ height: 'inherit' }}>
-                    <ContentProviderGrapes {...props} />
-                </div>
-            {/* <div className="container">
+  return (
+    <LayoutPages>
+      <div style={{ height: "inherit" }}>
+        <ContentProviderGrapes {...props} />
+        <iframe
+          src="https://forms.monday.com/forms/embed/2e90a38ef4192d5698984e68c72fe4cf?r=use1"
+          style={{
+            minHeight: "100vh",
+          }}
+        ></iframe>
+      </div>
+      {/* <div className="container">
                 <div className="row pt-12">
                     <div className="col-lg-12 mb-12 mb-lg-12">
                         
@@ -89,17 +88,17 @@ function AuthLogin(props) {
                     </div>
                 </div>
             </div> */}
-        </LayoutPages>
-    );
+    </LayoutPages>
+  );
 }
 
 export default AuthLogin;
 
-import 'grapesjs/dist/css/grapes.min.css'
-export { getStaticProps } from 'destack/build/server'
-import { ContentProviderGrapes } from 'destack'
+import "grapesjs/dist/css/grapes.min.css";
+export { getStaticProps } from "destack/build/server";
+import { ContentProviderGrapes } from "destack";
 
-// export default function Page(props) { 
+// export default function Page(props) {
 //     return (
 //         )
 // }
