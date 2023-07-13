@@ -98,7 +98,7 @@ export default function Navbar() {
               : colour,
         }}
       >
-        <div class="container-fluid">
+        <div class="container">
           <div class="d-flex align-items-center">
             <ul class="nav mx-n3 line-height-one font-montserrat">
               <li class="nav-item px-3">
@@ -139,7 +139,7 @@ export default function Navbar() {
         }}
       >
         {console.log(colour)}
-        <div className="container-fluid">
+        <div className="container">
           <a className="navbar-brand me-0" href="/">
             {console.log("setting.logo", setting.logo)}
             {isLoaded ? (
@@ -399,6 +399,7 @@ export default function Navbar() {
                       fill="currentColor"
                     />
                   </svg>
+                  <span className="px-2">Login</span>
                 </a>
               </li>
             )}
