@@ -42,7 +42,7 @@ export default function Footer() {
                     </li>
                     <li className="nav-item py-2 py-md-0 px-0 border-top-0">
                       <a
-                        href="/modules/courses"
+                        href="/modules"
                         className="nav-link px-4 fw-normal text-gray-800"
                       >
                         {translation.courses}
