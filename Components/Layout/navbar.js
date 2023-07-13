@@ -89,13 +89,53 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className="navbar navbar-expand-xl navbar-light border-bottom border-xl-0 py-2 py-xl-4"
+      <div
+        class="d-none d-xl-block py-1 position-relative z-index-2"
         style={{
           backgroundColor:
             colour == undefined
               ? "rgba(var(--bs-white-rgb),var(--bs-bg-opacity))!important"
               : colour,
+        }}
+      >
+        <div class="container-fluid">
+          <div class="d-flex align-items-center">
+            <ul class="nav mx-n3 line-height-one font-montserrat">
+              <li class="nav-item px-3">
+                <span class="font-size-xs text-white">+01 123 45678</span>
+              </li>
+              <li class="nav-item px-3">
+                <span class="font-size-xs text-white">
+                  test@bestmicrogardens.eu
+                </span>
+              </li>
+            </ul>
+
+            <ul class="nav ms-auto me-n3 font-size-sm">
+              <li class="nav-item px-3 py-4">
+                <a href="/" class="nav-link p-0 text-white">
+                  Home
+                </a>
+              </li>
+              {pages && pages.length > 0
+                ? pages.map((c) => (
+                    <li class="nav-item px-3 py-4">
+                      <a href={`/${c.slug}`} class="nav-link p-0 text-white">
+                        {c.name}
+                      </a>
+                    </li>
+                  ))
+                : null}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <header
+        className="navbar navbar-expand-xl navbar-light border-bottom border-xl-0 py-2 py-xl-4"
+        style={{
+          backgroundColor:
+            "rgba(var(--bs-white-rgb),var(--bs-bg-opacity))!important",
         }}
       >
         {console.log(colour)}
@@ -161,7 +201,10 @@ export default function Navbar() {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <div className="bg-primary rounded py-3 px-5 d-flex align-items-center">
+                  <div
+                    className="rounded py-3 px-5 d-flex align-items-center"
+                    style={{ backgroundColor: "#238495" }}
+                  >
                     <div className="me-3 ms-1 d-flex text-white">
                       {/* Icon */}
                       <svg
@@ -186,8 +229,9 @@ export default function Navbar() {
                   </div>
                 </a>
                 <ul
-                  className="dropdown-menu dropdown-menu-md bg-primary rounded py-4 mt-4 "
+                  className="dropdown-menu dropdown-menu-md rounded py-4 mt-4 "
                   aria-labelledby="navbarVerticalMenu"
+                  style={{ backgroundColor: "#238498" }}
                 >
                   {departments &&
                     departments.length > 0 &&
@@ -221,75 +265,6 @@ export default function Navbar() {
                                 
                                 
                             </ul> */}
-
-            <div
-              className="collapse navbar-collapse z-index-lg"
-              id="navbarCollapse"
-            >
-              <button
-                className="navbar-toggler outline-0 text-primary"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <svg
-                  width="16"
-                  height="17"
-                  viewBox="0 0 16 17"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.142135 2.00015L1.55635 0.585938L15.6985 14.7281L14.2843 16.1423L0.142135 2.00015Z"
-                    fill="currentColor"
-                  ></path>
-                  <path
-                    d="M14.1421 1.0001L15.5563 2.41431L1.41421 16.5564L0 15.1422L14.1421 1.0001Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </button>
-
-              <ul className="navbar-nav ms-auto">
-                <li className="nav-item dropdown dropdown-full-width">
-                  <a className="nav-link" href="/">
-                    Home
-                  </a>
-                </li>
-                {pages && pages.length > 0
-                  ? pages.map((c) => (
-                      <li className="nav-item dropdown dropdown-full-width">
-                        <a className="nav-link" href={`/${c.slug}`}>
-                          {c.name}
-                        </a>
-                      </li>
-                    ))
-                  : null}
-              </ul>
-            </div>
-
-            <button
-              className="navbar-toggler ms-4 ms-md-5 shadow-none bg-teal text-white icon-xs p-0 outline-0 h-40p w-40p d-flex d-xl-none place-flex-center"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarCollapse"
-              aria-controls="navbarCollapse"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <svg
-                width="25"
-                height="17"
-                viewBox="0 0 25 17"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="25" height="1" fill="currentColor" />
-                <rect y="8" width="15" height="1" fill="currentColor" />
-                <rect y="16" width="20" height="1" fill="currentColor" />
-              </svg>
-            </button>
 
             <ul className="navbar-nav ms-auto">
               <li
