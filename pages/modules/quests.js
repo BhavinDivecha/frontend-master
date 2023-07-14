@@ -154,7 +154,7 @@ export default function Courses() {
                     <div className="card border shadow p-2 lift sk-fade mb-6 flex-md-row align-items-center row gx-0">
                       <div className="col-md-4 card-zoom position-relative">
                         <a
-                          href={`/modules/course/?id=${course._id}`}
+                          href={`/modules/quest/?id=${course._id}`}
                           className="card-img sk-thumbnail img-ratio-2 d-block"
                         >
                           <img
@@ -166,7 +166,7 @@ export default function Courses() {
                       </div>
 
                       <div className="col-md-8 card-footer px-2 px-md-5 py-4 py-md-0 position-relative">
-                        <a href={`/modules/course/?id=${course._id}`}>
+                        <a href={`/modules/quest/?id=${course._id}`}>
                           <span className="mb-1 d-inline-block text-gray-800">
                             {course.name} ({course.category})
                           </span>
@@ -174,7 +174,7 @@ export default function Courses() {
 
                         <div className="position-relative">
                           <a
-                            href={`/modules/course/?id=${course._id}`}
+                            href={`/modules/quest/?id=${course._id}`}
                             className="d-block stretched-link"
                           >
                             <h4 className="line-clamp-2 me-md-6 me-lg-10 me-xl-4 mb-3">

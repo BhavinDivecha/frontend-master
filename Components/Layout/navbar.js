@@ -98,7 +98,7 @@ export default function Navbar() {
               : colour,
         }}
       >
-        <div class="container">
+        <div class="container-fluid">
           <div class="d-flex align-items-center">
             <ul class="nav mx-n3 line-height-one font-montserrat">
               <li class="nav-item px-3">
@@ -139,7 +139,7 @@ export default function Navbar() {
         }}
       >
         {console.log(colour)}
-        <div className="container">
+        <div className="container-fluid">
           <a className="navbar-brand me-0" href="/">
             {console.log("setting.logo", setting.logo)}
             {isLoaded ? (
@@ -239,7 +239,7 @@ export default function Navbar() {
                       <li className="dropdown-item ">
                         <a
                           className="dropdown-link"
-                          href={`/modules/courses/?id=${dept._id}`}
+                          href={`/modules/quests/?id=${dept._id}`}
                         >
                           {dept.name}
                         </a>
@@ -364,7 +364,7 @@ export default function Navbar() {
                           <li className="dropdown-item ">
                             <a
                               className="dropdown-link"
-                              href={`/modules/courses/?id=${dept._id}`}
+                              href={`/modules/quests/?id=${dept._id}`}
                             >
                               {dept.name}
                             </a>

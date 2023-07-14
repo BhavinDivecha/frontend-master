@@ -51,7 +51,7 @@ export default function Dashboard() {
               <div className="row align-items-end mb-md-7 mb-4">
                 <div className="col-md-auto">
                   <a
-                    href="/modules/courses"
+                    href="/modules/quests"
                     className="d-flex align-items-center fw-medium"
                   >
                     {translation.browseAll}
@@ -80,7 +80,7 @@ export default function Dashboard() {
                       <>
                         <div className="col mb-md-6 mb-4 px-2 px-md-4">
                           <a
-                            href={`/modules/courses/?id=${dept._id}`}
+                            href={`/modules/quests/?id=${dept._id}`}
                             className="card icon-category border shadow-dark p-md-5 p-3 text-center lift"
                           >
                             <div className="position-relative text-light">
