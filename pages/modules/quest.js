@@ -46,7 +46,7 @@ export default function Courses() {
 
   return (
     <Layout>
-      <div className="container">
+      <div className="container ql-editor">
         <div className="row pt-12">
           <div className="col-lg-8 mb-8 mb-lg-8">
             <div className="mb-8">

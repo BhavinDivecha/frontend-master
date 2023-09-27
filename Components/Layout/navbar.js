@@ -90,7 +90,7 @@ export default function Navbar() {
   return (
     <>
       <div
-        class="d-none d-xl-block py-1 position-relative z-index-2"
+        className="d-none d-xl-block py-1 position-relative z-index-2"
         style={{
           backgroundColor:
             colour == undefined
@@ -98,29 +98,32 @@ export default function Navbar() {
               : colour,
         }}
       >
-        <div class="container-fluid">
-          <div class="d-flex align-items-center">
-            <ul class="nav mx-n3 line-height-one font-montserrat">
-              <li class="nav-item px-3">
-                <span class="font-size-xs text-white">+01 123 45678</span>
+        <div className="container-fluid">
+          <div className="d-flex align-items-center">
+            <ul className="nav mx-n3 line-height-one font-montserrat">
+              <li className="nav-item px-3">
+                <span className="font-size-xs text-white">+01 123 45678</span>
               </li>
-              <li class="nav-item px-3">
-                <span class="font-size-xs text-white">
+              <li className="nav-item px-3">
+                <span className="font-size-xs text-white">
                   test@bestmicrogardens.eu
                 </span>
               </li>
             </ul>
 
-            <ul class="nav ms-auto me-n3 font-size-sm">
-              <li class="nav-item px-3 py-4">
-                <a href="/" class="nav-link p-0 text-white">
+            <ul className="nav ms-auto me-n3 font-size-sm">
+              <li className="nav-item px-3 py-4">
+                <a href="/" className="nav-link p-0 text-white">
                   Home
                 </a>
               </li>
               {pages && pages.length > 0
-                ? pages.map((c) => (
-                    <li class="nav-item px-3 py-4">
-                      <a href={`/${c.slug}`} class="nav-link p-0 text-white">
+                ? pages.map((c, i) => (
+                    <li key={i} className="nav-item px-3 py-4">
+                      <a
+                        href={`/${c.slug}`}
+                        className="nav-link p-0 text-white"
+                      >
                         {c.name}
                       </a>
                     </li>
@@ -274,8 +277,9 @@ export default function Navbar() {
                 <div style={{ display: "flex" }}>
                   {languages &&
                     languages.length > 0 &&
-                    languages.map((lang) => (
+                    languages.map((lang, i) => (
                       <a
+                        key={i}
                         className="nav-link language-nav"
                         onClick={() => handleLanguageChange(lang.name)}
                         title={lang.name}

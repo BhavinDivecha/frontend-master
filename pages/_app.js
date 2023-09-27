@@ -10,7 +10,7 @@ import "../public/assets/libs/flickity-fade/flickity-fade.css";
 import "../public/assets/libs/flickity/dist/flickity.min.css";
 import "../public/assets/libs/highlightjs/styles/vs2015.css";
 import "../public/assets/libs/jarallax/dist/jarallax.css";
-import "../public/assets/libs/quill/dist/quill.core.css";
+// import "../public/assets/libs/quill/dist/quill.core.css";
 import "../public/assets/css/theme.css";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";

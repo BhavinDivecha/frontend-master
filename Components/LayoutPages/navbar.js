@@ -72,7 +72,7 @@ export default function Navbar() {
   return (
     <>
       <div
-        class="d-none d-xl-block py-1 position-relative z-index-2"
+        className="d-none d-xl-block py-1 position-relative z-index-2"
         style={{
           backgroundColor:
             colour == undefined
@@ -80,23 +80,23 @@ export default function Navbar() {
               : colour,
         }}
       >
-        <div class="container-fluid">
-          <div class="d-flex align-items-center">
-            <ul class="nav mx-n3 line-height-one font-montserrat">
-              <li class="nav-item px-3">
-                <span class="font-size-xs text-white">+01 123 45678</span>
+        <div className="container-fluid">
+          <div className="d-flex align-items-center">
+            <ul className="nav mx-n3 line-height-one font-montserrat">
+              <li className="nav-item px-3">
+                <span className="font-size-xs text-white">+01 123 45678</span>
               </li>
-              <li class="nav-item px-3">
-                <span class="font-size-xs text-white">
+              <li className="nav-item px-3">
+                <span className="font-size-xs text-white">
                   test@bestmicrogardens.eu
                 </span>
               </li>
             </ul>
 
-            <ul class="nav ms-auto me-n3 font-size-sm">
+            <ul className="nav ms-auto me-n3 font-size-sm">
               {isLoggedIn ? (
                 <>
-                  <li class="nav-item px-3 py-4">
+                  <li className="nav-item px-3 py-4">
                     <a
                       className="nav-link p-0 text-white"
                       onClick={handleLogout}
@@ -105,7 +105,7 @@ export default function Navbar() {
                       {translation.logout}
                     </a>
                   </li>
-                  <li class="nav-item px-3 py-4">
+                  <li className="nav-item px-3 py-4">
                     <a
                       className="nav-link p-0 text-white"
                       href="/profile"
@@ -117,7 +117,7 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <li class="nav-item px-3">
+                  <li className="nav-item px-3">
                     <a
                       href="#"
                       className="nav-link d-flex px-3 px-md-4 text-white icon-xs"
